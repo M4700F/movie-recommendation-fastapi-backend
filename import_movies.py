@@ -1,9 +1,13 @@
 import pandas as pd
 import re
 from sqlalchemy import create_engine
+from dotenv import load_dotenv
+import os
 
-DB_USER = "postgres.idsiryiyyijdbcebrpmp"
-DB_PASSWORD = "1cAnlTHuXBpUX4xv"
+load_dotenv()
+
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
 # Use transaction mode (port 6543) or direct connection
 DB_HOST = "aws-1-us-east-1.pooler.supabase.com"
 DB_PORT = "6543"  # Changed to transaction mode
